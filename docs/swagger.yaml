@@ -1,0 +1,25 @@
+basePath: /
+host: localhost:8080
+info:
+  contact: {}
+  description: Microservicio
+  title: MS API
+  version: "1.0"
+paths:
+  /MS/COM/Project/Service/V1/api:
+    get:
+      consumes:
+      - application/json
+      description: Retorna el estado del microservicio
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Obtener estado del servicio
+      tags:
+      - health
+swagger: "2.0"
