@@ -1,3 +1,5 @@
-swagger: ## Genera documentación Swagger
-	@echo "Generando documentación Swagger..."
+run: 
+	go run cmd/api/main.go
+
+swagger:
 	swag init -g cmd/api/main.go -o docs --parseDependency --parseInternal

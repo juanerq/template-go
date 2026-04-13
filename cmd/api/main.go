@@ -4,6 +4,7 @@ import (
 	_ "app/docs"
 	routes "app/internal"
 	config "app/internal/shared/config/env"
+	"app/internal/shared/middleware"
 	"fmt"
 
 	"github.com/gin-gonic/gin"
@@ -27,6 +28,8 @@ func main() {
 	}
 
 	router := gin.Default()
+
+	router.Use(middleware.TransactionID())
 
 	routes.RegisterRoutes(router, envConfig)
 

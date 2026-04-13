@@ -1,6 +1,10 @@
 package app_handler
 
-import "github.com/gin-gonic/gin"
+import (
+	"app/internal/shared/config/logger"
+
+	"github.com/gin-gonic/gin"
+)
 
 // GetUsers godoc
 // @Summary Obtener estado del servicio
@@ -12,6 +16,7 @@ import "github.com/gin-gonic/gin"
 // @Router /MS/COM/Project/Service/V1/api [get]
 func GetUsers(c *gin.Context) {
 	c.JSON(200, gin.H{
-		"message": "GetUsers",
+		"message":       "GetUsers",
+		"transactionId": logger.GetTransactionID(c.Request.Context()),
 	})
 }
