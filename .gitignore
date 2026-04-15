@@ -2,9 +2,6 @@
 # Edit at https://www.toptal.com/developers/gitignore?templates=go
 
 ### Go ###
-# If you prefer the allow list template instead of the deny list, see community template:
-# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
-#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -15,15 +12,82 @@
 # Test binary, built with `go test -c`
 *.test
 
-# Output of the go coverage tool, specifically when used with LiteIDE
+# Output of the go coverage tool
 *.out
+coverage.txt
+coverage.html
+*.coverprofile
 
-# Dependency directories (remove the comment below to include it)
-# vendor/
+# Dependency directories
+vendor/
 
 # Go workspace file
 go.work
+go.work.sum
 
-# End of https://www.toptal.com/developers/gitignore/api/go
+### Microservice REST specific ###
+# Build artifacts
+bin/
+dist/
+build/
+*.bin
 
+# Environment files
 .env
+.env.local
+.env.*.local
+*.env
+
+# Configuration files with secrets
+*secret*.yaml
+*secret*.yml
+*secret*.json
+config/local.yaml
+config/local.yml
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Debug
+__debug_bin
+debug
+*.pprof
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Air (live reload for Go)
+.air.toml
+tmp/
+
+# Docker
+.dockerignore.local
+docker-compose.override.yml
+
+# OpenAPI/Swagger generated files
+docs/swagger.json
+docs/swagger.yaml
+
+# Kubernetes secrets
+*-secret.yaml
+secrets/
+
+# CI/CD
+.gitlab-ci-local.yml
